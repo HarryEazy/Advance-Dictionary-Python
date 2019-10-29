@@ -1,5 +1,4 @@
 import mysql.connector
-harry = "looool"
 con = mysql.connector.connect(
 user = "ardit700_student",
 password = "ardit700_student",
@@ -9,8 +8,12 @@ database = "ardit700_pm1database"
 
 
 cursor = con.cursor()
+word = input("Enter a word: ")
+query = cursor.execute("SELECT * FROM Dictionary WHERE Expression = '%s' " % word )
+results = cursor.fetchall()
 
-
-query = cursor.execute("SELECT * FROM Dictionary")
-result = cursor.fetchall()
-print(result)
+if results:
+    for result in results:
+        print(result[1])
+else:
+    print("No word found")
