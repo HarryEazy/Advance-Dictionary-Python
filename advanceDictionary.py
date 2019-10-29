@@ -1,5 +1,5 @@
 import mysql.connector
-
+harry = "harry"
 con = mysql.connector.connect(
 user = "ardit700_student",
 password = "ardit700_student",
